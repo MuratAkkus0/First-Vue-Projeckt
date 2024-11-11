@@ -43,7 +43,7 @@ const handleSubmit = async () => {
     }
 
     try {
-        const response = await axios.put('/api/jobs/'+jobId, data);
+        const response = await axios.put('https://first-vue-project-fake-api.vercel.app/jobs/'+jobId, data);
         Toast.success('Job Updated Successfully');
         // Router.push ile yeni sayfaya attik
         router.push('/jobs/' + response.data.id);
@@ -57,7 +57,7 @@ const handleSubmit = async () => {
 onMounted(async () => {
     try {
         
-        const response = await axios.get(`/api/jobs/${jobId}`);
+        const response = await axios.get(`https://first-vue-project-fake-api.vercel.app/jobs/${jobId}`);
         state.job = response.data;
         form.type = state.job.type;
         form.title = state.job.title;

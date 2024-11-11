@@ -20,7 +20,7 @@ const state = reactive({
 
 onMounted( async () => {
     try {
-        const response = await axios.get(`/api/jobs/${jobId}`);
+        const response = await axios.get(`https://first-vue-project-fake-api.vercel.app/jobs/${jobId}`);
         state.job = await response.data;
 
     } catch (error) {
@@ -33,7 +33,7 @@ const deleteJob = async () => {
   try {
     const confirm = window.confirm('Are you sure you want to delete this job?');
     if (confirm) {
-        const response = await axios.delete(`/api/jobs/${jobId}`);
+        const response = await axios.delete(`https://first-vue-project-fake-api.vercel.app/jobs/${jobId}`);
         Toast.success('Job Deleted Successfully!');
         router.push('/jobs');
     }else{

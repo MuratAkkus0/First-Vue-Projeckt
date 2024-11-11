@@ -37,7 +37,7 @@ const handleSubmit = async () => {
   }
 
   try {
-    const response = await axios.post('/api/jobs', data);
+    const response = await axios.post('https://first-vue-project-fake-api.vercel.app/jobs', data);
     Toast.success('Job Added Successfully');
     // Router.push ile yeni sayfaya attik
     router.push('/jobs/' + response.data.id);

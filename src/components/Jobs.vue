@@ -20,7 +20,7 @@ const state = reactive({
 
 onMounted(async () => {
     try {
-        const response = await axios.get('/api/jobs');
+        const response = await axios.get('https://first-vue-project-fake-api.vercel.app/jobs');
         state.jobs = await response.data;
     } catch (error) {
         console.log('Error while fetching jobs:', error);
